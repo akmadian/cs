@@ -12,11 +12,7 @@ public class Gradanator {
         double weightedFinalScore = midtermOrFinal("Final:");
         double weightedHomeWorkScore = homework();
 
-        double grade = round(weightedMidtermScore + weightedFinalScore + weightedHomeWorkScore);
-        double GPA = round((grade * 4.0) / 100.0);
-        System.out.println("Overall Percentage = " + grade);
-        System.out.println("Your Grade Will Be At Least: " + GPA);
-
+        printFinalGrades(weightedMidtermScore, weightedFinalScore, weightedHomeWorkScore);
     }
 
     private static double midtermOrFinal(String mof){
