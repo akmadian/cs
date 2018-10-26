@@ -126,9 +126,9 @@ public class Gradanator {
      */
     private static void printFinalGrades(double grade){
         System.out.println("Overall Percentage = " + grade);
-        if (grade >= 85.0){ System.out.println("Your grade will be at least 3.0\nGood Job!");
-        } else if (grade >= 75.0){ System.out.println("Your grade will be at least 2.0\nNot too bad...");
-        } else if (grade >= 60.0){ System.out.println("Your grade will be at least 0.7\nYou should probably study more next time.");
-        } else { System.out.println("Your grade will be at least 0.0\nReally?"); }
+        if (grade >= 85.0){ System.out.println("Your grade will be at least: 3.0\nGood Job!");
+        } else if (grade >= 75.0){ System.out.println("Your grade will be at least: 2.0\nNot too bad...");
+        } else if (grade >= 60.0){ System.out.println("Your grade will be at least: 0.7\nYou should probably study more next time.");
+        } else { System.out.println("Your grade will be at least: 0.0\nReally?"); }
     }
 }
