@@ -15,11 +15,10 @@ public class ISBNIdentifier {
     // Per ISBN variables
     private static int numDashes;
     private static String formattedISBN;    // ISBN without dashes or spaces, with checksum.
-    private static String[] ISBNArray;      // ISBN without dashes, with checksum, in a string array.
     private static String[] TruncISBNArray; // ISBNArray, without checksum.
 
     public static void main(String[] args) {
-        while (!quitFlag) {
+        do {
             System.out.println("Please enter an ISBN to test.");
             System.out.print("ISBN: ");
             String inISBN = scanner.nextLine();
@@ -27,14 +26,14 @@ public class ISBNIdentifier {
             if (inISBN.equals("q") || inISBN.equals("Q")) {
                 quitFlag = true;
             } else {
+                inISBN = inISBN.replace(" ", ""); // Strip any spaces from input.
                 numDashes = countOccurrences(inISBN);
-                formattedISBN = inISBN.replace("-", "").replace(" ", "");
-                ISBNArray = formattedISBN.split("");
-                TruncISBNArray = Arrays.copyOf(ISBNArray, ISBNArray.length - 1); // ISBN Array without checksum
+                formattedISBN = inISBN.replace("-", "");
+                TruncISBNArray = Arrays.copyOf(formattedISBN.split(""), formattedISBN.length() - 1); // ISBN Array without checksum
 
                 validateIsbn(inISBN);
             }
-        }
+        } while (!quitFlag);
     }
 
     /*
@@ -44,13 +43,13 @@ public class ISBNIdentifier {
     private static void validateIsbn(String ISBN){
         // Only validate checksum if format is valid, will throw error if checksum is attempted without proper format.
         if (validateFormat(ISBN)) {
-            if (!validateCheckSum(ISBN)){ // If checksum is invalid.
+            if (!validateCheckSum(ISBN)){
                 System.out.println("ISBN Checksum Invalid.");
             } else {
                 System.out.println("ISBN Is Valid.");
             }
         }
-        System.out.println("");
+        System.out.println();
     }
 
     /*
@@ -63,7 +62,6 @@ public class ISBNIdentifier {
 
         // Check case for invalid character in ISBN.
         for (String index : TruncISBNArray){
-            System.out.print(index);
             try{ // Try to parse as int, will throw error if can't parse
                 Integer.parseInt(index);
             } catch (NumberFormatException ex){
@@ -93,12 +91,11 @@ public class ISBNIdentifier {
         }
 
         // Check cases for starting or ending dashes
-        String[] UnformattedISBNArray = ISBN.split("");
-        if (UnformattedISBNArray[0].equals("-")){ // If first character in ISBN is '-'
+        if (ISBN.startsWith("-")){ // If first character in ISBN is '-'
             System.out.println("Invalid ISBN - ISBN Starts with dash.");
             return false;
         }
-        if (UnformattedISBNArray[UnformattedISBNArray.length - 1].equals("-")){ // If last character in ISBN is '-'
+        if (ISBN.endsWith("-")){ // If last character in ISBN is '-'
             System.out.println("Invalid ISBN - ISBN Ends with dash.");
             return false;
         }
@@ -122,10 +119,10 @@ public class ISBNIdentifier {
         int total = 0;
 
         // Set correct sum
-        if (ISBNArray[ISBNArray.length - 1].equals("X")){
+        if (ISBN.endsWith("X")){
             correctSum = 10;
         } else {
-            correctSum = Integer.parseInt(ISBNArray[ISBNArray.length - 1]);
+            correctSum = Character.getNumericValue(ISBN.charAt(ISBN.length() - 1));
         }
 
         // Iterate through ISBN
@@ -143,6 +140,6 @@ public class ISBNIdentifier {
         <returns> int - The number of times that - occurs in str.
      */
     private static int countOccurrences(String str){
-        return str.split("-", -1).length-1;
+        return str.split("-").length - 1;
     }
 }
