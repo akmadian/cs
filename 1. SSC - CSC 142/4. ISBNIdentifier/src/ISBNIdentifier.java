@@ -80,7 +80,7 @@ public class ISBNIdentifier {
         }
 
         // Check case for correct amount of dashes.
-        if (numDashes != 0){ // If ISBN has zero dashes.
+        if (numDashes != 0){ // If ISBN has more than zero dashes, do check. If not, do nothing.
             if (numDashes < 3){
                 System.out.println("Invalid ISBN - Too few dashes.");
                 return false;
