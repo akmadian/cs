@@ -6,11 +6,13 @@ public class DateTesting {
         Scanner scanner = new Scanner(System.in);
         // testAllMethods();
 
+        // Get Today's Date
         System.out.print("Please enter today's date in the form (mm d yyyy): ");
         String todayIn = scanner.nextLine();
         String[] numbers1 = todayIn.split(" ");
         Date today = new Date(Integer.parseInt(numbers1[2]), Integer.parseInt(numbers1[0]), Integer.parseInt(numbers1[1]));
 
+        // Get Birthday
         System.out.print("Please enter your birthday in the form (mm d yyyy): ");
         String bdayIn = scanner.nextLine();
         String[] numbers2 = bdayIn.split(" ");

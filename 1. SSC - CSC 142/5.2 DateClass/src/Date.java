@@ -1,16 +1,24 @@
 public class Date {
 
+    // Public so that tests work
     public int year;
     public int month;
     public int day;
 
     //region Constructors
+    // Default Constructor
     public Date(){
         this.year = 1753;
         this.month = 1;
         this.day = 1;
     }
 
+    /*
+    <Date> - Creates a date object with the given year, month, and day.
+        <param> int year  - The year of the date, must be between 1753 and 9999 (inclusive).
+        <param> int month - The month of the date, must be between 1 and 12 (inclusive).
+        <param> int day   - The day of the date, must be between 1 and 31 (inclusive).
+     */
     public Date(int year, int month, int day){
         if (!validateDate(year, month, day)){ throw new IllegalArgumentException("Invalid Month, Day, or Year.");}
         this.year = year;
@@ -54,7 +62,6 @@ public class Date {
     <nextDay> - Increments the current instance's day.
      */
     public void nextDay(){
-        // rollovers
         if (this.isLeapYear() && this.month == 2 && this.day == 29){ // Leap year case
             this.month++;
             this.day = 1;
@@ -91,10 +98,10 @@ public class Date {
             for leap years automatically.
      */
     public String getDayOfWeek(){
-        // Jan 1, 2018
         int[] months = new int[] {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
         String[] days = new String[] {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
+        // Doomsday Algorithm
         int year = this.year; year -= this.month < 3 ? 1 : 0;
         int dayOfWeek = (year + year / 4 - year / 100 + year / 400 + months[this.month - 1] + this.day) % 7;
         return days[dayOfWeek];
@@ -126,10 +133,10 @@ public class Date {
 
     /*
     <daysBetween> - Finds the number of days between the current instance and a given Date object.
-                    date2 should be LATER THAN the current object's date.
-        <param> Date date1 - The start date.
+                    endDate should be LATER THAN the current object's date, will give incorrect answer otherwise.
+        <param> Date endDate - The ending date.
      */
-    public int daysBetween(Date endDate){
+    private int daysBetween(Date endDate){
         int days = 0;
 
         // Add days left in current month of this date
@@ -157,7 +164,6 @@ public class Date {
 
         return days;
     }
-
     //endregion
 
     //region Accessors
@@ -179,6 +185,5 @@ public class Date {
     private boolean validateDay(int day) { return day > 0 && day <= 31; }
     private boolean validateMonth(int month){ return month > 0 && month <= 12; }
     private boolean validateYear(int year){ return year >= 1753 && year <= 9999; }
-
     //endregion
 }
