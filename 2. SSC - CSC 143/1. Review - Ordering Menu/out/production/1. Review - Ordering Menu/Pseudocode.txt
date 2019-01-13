@@ -1,0 +1,35 @@
+MainMenuOptions = {Coffee, Tea, Help}
+Coffee Menu Options = {Latte : price, Mocha : price, Espresso : price}
+Tea Menu Options = {Green Tea : price, Black Tea : price, Decaf Tea : price}
+
+MAIN
+	Display main menu
+
+
+DISPLAY MAIN MENU
+	print Select one of the following
+	foreach string menuoption in MainMenuOptions
+		print menuoption.firstletter.toUpper() + for + menuoption
+	print Q to Quit
+
+	get scanner input
+	switch input
+		case T:
+			Display Tea Menu
+		case C:
+			Display Coffee Menu
+		case H:
+			Display Help
+		case Q:
+			end logic
+
+DISPLAY COFFEE MENU
+	print Select one of the following
+	foreach KVPair pair in CoffeeMenuOptions
+		print menuoption.key.firstletter.toUpper() + for + menuoption.key		
+	print X to previous menu
+
+	get scanner input
+	switch input
+		case L:
+			print You have selected 
