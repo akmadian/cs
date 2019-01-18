@@ -79,7 +79,8 @@ public class ConsoleMenu {
                 DisplayHelp();
                 DisplayMainMenu();
             case "Q":
-                System.out.println("Thank you for using our cafe ordering system!");
+                System.out.printf("Thank you for using our cafe ordering system! Total Cost: %.2f", totalCost);
+                System.exit(0);
         }
     }
 
@@ -127,6 +128,6 @@ public class ConsoleMenu {
      *
      */
     private static void DisplayHelp() {
-        System.out.println("To order ");
+        System.out.println("To order, enter the letter corresponding to the desired option, and press enter.");
     }
 }

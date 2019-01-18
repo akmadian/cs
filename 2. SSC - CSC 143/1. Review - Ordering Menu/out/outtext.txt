@@ -1,0 +1,84 @@
+Select one of the following...
+    C for Coffee
+    T for Tea
+    H for Help
+    Q to quit
+--->: h
+
+
+
+To order, enter the letter corresponding to the desired option, and press enter.
+Select one of the following...
+    C for Coffee
+    T for Tea
+    H for Help
+    Q to quit
+--->: c
+
+
+
+Awesome... select one of the following items:
+    E for Espresso
+    L for Latte
+    M for Mocha
+    X to previous menu
+--->: e
+
+
+You have selected Espresso -- 4.50 Total Cost: 4.50
+Awesome... select one of the following items:
+    E for Espresso
+    L for Latte
+    M for Mocha
+    X to previous menu
+--->: m
+
+
+You have selected Mocha -- 5.00 Total Cost: 9.50
+Awesome... select one of the following items:
+    E for Espresso
+    L for Latte
+    M for Mocha
+    X to previous menu
+--->: X
+
+
+Ok... taking back to main menu
+Select one of the following...
+    C for Coffee
+    T for Tea
+    H for Help
+    Q to quit
+--->: T
+
+
+
+Awesome... select one of the following items:
+    B for Black Tea
+    D for Decaf Tea
+    G for Green Tea
+    X to previous menu
+--->: G
+
+
+You have selected Green Tea -- 5.20 Total Cost: 14.70
+Awesome... select one of the following items:
+    B for Black Tea
+    D for Decaf Tea
+    G for Green Tea
+    X to previous menu
+--->: X
+
+
+Ok... taking back to main menu
+Select one of the following...
+    C for Coffee
+    T for Tea
+    H for Help
+    Q to quit
+--->: Q
+
+
+
+Thank you for using our cafe ordering system! Total Cost: 14.70
+Process finished with exit code 0
