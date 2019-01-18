@@ -1,18 +1,27 @@
+scanner = system.in
+
+totalcost = 0.0
+
 MainMenuOptions = {Coffee, Tea, Help}
 Coffee Menu Options = {L : [Latte, price], M : [Mocha, price], E : [Espresso, price]}
 Tea Menu Options = {G : [Green Tea, price], Black Tea : [Black Tea, price], D : [Decaf Tea, price]}
 
 MAIN
-	Display main menu
+	DISPLAYMAINMENU
 
 
-DISPLAY MAIN MENU
+DISPLAYMAINMENU
 	print Select one of the following
 	foreach string menuoption in MainMenuOptions
 		print menuoption.firstletter.toUpper() + for + menuoption
 	print Q to Quit
 
 	get scanner input
+
+	if !menu.haskey(input) and !input.equals(Q)
+		print What? select again
+		DISPLAYMAINMENU
+
 	switch input
 		case T:
 			Display Tea Menu
@@ -23,13 +32,29 @@ DISPLAY MAIN MENU
 		case Q:
 			end logic
 
-DISPLAY COFFEE MENU
+DISPLAYMENU (menu)
 	print Select one of the following
-	foreach KVPair pair in CoffeeMenuOptions
-		print menuoption.key.firstletter.toUpper() + for + menuoption.key		
+
+	foreach KVPair pair in menu
+		print pair.key.firstletter.toUpper() + for + pair.value[0]
 	print X to previous menu
 
 	get scanner input
-	switch input
-		case L:
-			print You have selected 
+
+	if input == x
+		print taking back to main menu
+	else
+		if !menu.haskey(input)
+			print what? select again
+			DISPLAYMENU (menu)
+		else
+			print you have selected + menu[input][0]
+
+			add item cost to total cost
+			print price, total price
+
+			DISPLAYMENU (menu)
+
+DISPLAYHELP
+	print Help message
+		

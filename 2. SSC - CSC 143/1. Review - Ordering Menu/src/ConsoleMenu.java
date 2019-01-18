@@ -1,12 +1,21 @@
+/*
+Ari Madian
+January 16, 2019
+*/
+
+
 import com.sun.tools.javac.Main;
 
+import java.awt.desktop.ScreenSleepEvent;
 import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
 
-public class OrderingMenu {
+public class ConsoleMenu {
 
     private static final Scanner scanner = new Scanner(System.in);
+
+    private static double totalCost = 0.0;
 
     private static final Map<String, String> MainMenu;
     static
@@ -35,27 +44,33 @@ public class OrderingMenu {
         TeaMenu.put("D", new String[]{"Decaf Tea", "4.00"});
     }
 
-
     public static void main(String[] args) {
         DisplayMainMenu();
     }
 
+    /** Displays the main menu
+     *
+     */
     private static void DisplayMainMenu() {
         System.out.println("Select one of the following...");
+
+        // Print options
         for (Map.Entry<String, String> pair : MainMenu.entrySet()
              ) {
             System.out.println("    " + pair.getKey() + " for " + pair.getValue());
         }
         System.out.println("    Q to quit");
+
+        // Get input
         System.out.print("--->: "); String input = scanner.nextLine().toUpperCase();
 
-        if (!MainMenu.containsKey(input) && !input.equals("Q")) {
+        if (!MainMenu.containsKey(input) && !input.equals("Q")) { // If input is not in options
             System.out.println("\n\nWhat? ...select again!");
             DisplayMainMenu();
         }
 
         System.out.println("\n\n");
-        switch (input) {
+        switch (input) { // Act upon input
             case "C":
                 DisplayMenu(CoffeeMenu);
             case "T":
@@ -64,33 +79,54 @@ public class OrderingMenu {
                 DisplayHelp();
                 DisplayMainMenu();
             case "Q":
+                System.out.println("Thank you for using our cafe ordering system!");
         }
     }
 
+    /** Displays a given menu, takes user input, and parses it.
+     *
+     * @param menu: The menu to display
+     */
     private static void DisplayMenu(Map<String, String[]> menu) {
-        System.out.println("Select one of the following...");
+        System.out.println("Awesome... select one of the following items:");
+
+        // Print out options
         for (Map.Entry<String, String[]> pair : menu.entrySet()
              ) {
             System.out.println("    " + pair.getKey() + " for " + pair.getValue()[0]);
         }
         System.out.println("    X to previous menu");
+
+        // Get input
         System.out.print("--->: "); String input = scanner.nextLine().toUpperCase();
 
-        if (input.equals("X")) {
-            System.out.println("\n\n");
+        // Act upon input
+        if (input.equals("X")) { // If previous menu
+            System.out.println("\n\nOk... taking back to main menu");
             DisplayMainMenu();
         } else {
-            if (!menu.containsKey(input)) {
+            if (!menu.containsKey(input)) { // If input is NOT in available options
                 System.out.println("\n\nWhat? ...select again!");
                 DisplayMenu(menu);
             } else {
-                System.out.println("\n\nYou have selected " + menu.get(input)[0] + " -- " + menu.get(input)[1]);
+                // Print selected item
+                System.out.print("\n\nYou have selected " + menu.get(input)[0] + " -- ");
+
+                // Print item price, total price
+                totalCost += Double.parseDouble(menu.get(input)[1]);
+                System.out.print(menu.get(input)[1]);
+                System.out.printf(" Total Cost: %.2f", totalCost);
+                System.out.println();
+
                 DisplayMenu(menu);
             }
         }
     }
 
-    public static void DisplayHelp() {
-        System.out.println("Help Menu");
+    /** Displays a help menu.
+     *
+     */
+    private static void DisplayHelp() {
+        System.out.println("To order ");
     }
 }
