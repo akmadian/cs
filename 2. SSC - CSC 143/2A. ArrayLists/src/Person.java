@@ -13,7 +13,7 @@ import java.io.*;
  * Represents a person - first, last, email
  *
  */
-public class Person {
+public class Person implements Comparable<Person> {
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -69,9 +69,21 @@ public class Person {
 	/**
 	 * Print out the name
 	 */
-	
 	public String toString() {
 		return "Person [firstName=" + this.firstName + ", lastName=" + this.lastName + ", email=" + this.email + "]";
+	}
+
+	/**
+	 *
+	 * @param other The other Person object to compare.
+	 * @return 1 if objects are equal, 0 if not.
+	 */
+	public int compareTo(Person other) {
+		if (other.getEmail().equals(this.email)) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 }

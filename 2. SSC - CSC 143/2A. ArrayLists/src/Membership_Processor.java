@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Membership_Processor {
@@ -14,10 +16,36 @@ public class Membership_Processor {
 	 * function does Tell me what to look for in the function
 	 */
 	public static void PartA() throws FileNotFoundException {
-		ArrayList<Person> membership = readNames();
+		ArrayList<Person> membership = readNames("members");
+        ArrayList<Person> remove = readNames("removes");
+        ArrayList<Person> adds = readNames("adds");
 
-		System.out.println(String.format("Read Total of %d names", membership.size()));
+        ArrayList<Person> temp = new ArrayList<Person>();
 
+        for (Person member : membership) { // For each person in remove list
+            boolean found = false;
+            for (Person toRemove : remove) { // Search for person to remove
+                if (toRemove.compareTo(member) == 1) { // If person is found
+                    found = true; // Set remove flag
+                }
+            }
+            
+            if (!found) temp.add(member); //If person is not to be removed, add to temp
+        }
+
+        for (Person toAdd : adds) { // For each person in the adds list
+            String lastName = toAdd.getLastName();
+            int beforeLen = temp.size();
+            for (int toAddIndex = 0; toAddIndex < temp.size(); toAddIndex++) { // Loop through temp
+                if (lastName.equals(temp.get(toAddIndex).getLastName())) { // Check if proper place to add
+                    temp.add(toAddIndex + 1, toAdd); // Add person to list
+                    break;
+                }
+            }
+        }
+        Collections.sort(temp);
+
+		testPartA(temp);
 	}
 
 	/**
@@ -26,12 +54,12 @@ public class Membership_Processor {
 	 * @return ArrayList of Person class
 	 * @throws FileNotFoundException
 	 */
-	public static ArrayList<Person> readNames() throws FileNotFoundException {
+	public static ArrayList<Person> readNames(String filename) throws FileNotFoundException {
 		// Open scanner on file "members.csv"
-		File f = new File("members.csv");
+		File f = new File(filename + ".csv");
 		Scanner sc = new Scanner(f);
 
-		// TODO: create ArrayList of Person class variable p
+		ArrayList<Person> p = new ArrayList<Person>();
 
 		// Discard first line - it's the headers "first_name last_name email" etc
 		sc.nextLine();
@@ -51,11 +79,10 @@ public class Membership_Processor {
 			String last = scLine.next();
 			String email = scLine.next();
 
-			// TODO: put the person into the ArrayList
+			p.add(new Person(first, last, email));
 		}
 
-		// TODO: return the ArrayList you defined
-		return new ArrayList<Person>();
+		return p;
 	}
 
 	/**
