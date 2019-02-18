@@ -1,6 +1,9 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.*;
 
 class Membership_Processor {
 
@@ -14,7 +17,54 @@ class Membership_Processor {
      * Tell me what to look for in the function
      */
     public static void PartB() throws FileNotFoundException {
+        Map<String, Person> excelMap = readNamesMap("excel");
+        Map<String, Person> eviteMap = readNamesMap("evite");
 
+        ArrayList<Person> diff = new ArrayList<>();
+
+        // Find adds
+        Iterator<String> iter = excelMap.keySet().iterator();
+        while (iter.hasNext()) {
+            String email = iter.next();
+            if (!eviteMap.containsKey(email)) { // If member is not in evite list
+                Person toAdd = new Person( // Create Person
+                        excelMap.get(email).getFirstName(),
+                        excelMap.get(email).getLastName(),
+                        email + "+Evite"
+                );
+                diff.add(toAdd); // Add person
+            }
+        }
+
+        // Find removes
+        Set<String> nKeySet = new HashSet<>(eviteMap.keySet());
+        nKeySet.removeAll(excelMap.keySet());
+        for (String email : nKeySet) { // For each item in keyset diff
+            eviteMap.get(email).setEmail(email + "-Evite"); // Add email suffix
+            diff.add(eviteMap.get(email)); // Add person
+        }
+
+        testPartB(diff);
+    }
+
+    public static HashMap<String, Person> readNamesMap(String filename) throws FileNotFoundException {
+        HashMap<String, Person> outMap = new HashMap<String, Person>();
+        File f = new File(filename + ".csv");
+        Scanner sc = new Scanner(f);
+
+        sc.nextLine();
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            Scanner scLine = new Scanner(line);
+            scLine.useDelimiter(",");
+
+            String first = scLine.next();
+            String last = scLine.next();
+            String email = scLine.next();
+
+            outMap.put(email, new Person(first, last, email));
+        }
+        return outMap;
     }
 
         
