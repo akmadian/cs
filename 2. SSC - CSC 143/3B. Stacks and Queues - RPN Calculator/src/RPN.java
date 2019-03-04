@@ -60,21 +60,20 @@ public class RPN {
 
         Stack<String> stack = new Stack<>();
         for (int op = 0; op < expressionSize; op++) {
-            if (expression.size() <= 0) break; // If nothing left in expression to process
+            if (expression.size() <= 0) break; // If nothing left in expression to process, break
+
             if (isOperator(expression.get(op))) { // If looking at operator
                 double operand2 = Double.parseDouble(stack.pop());
                 double operand1 = Double.parseDouble(stack.pop());
-                stack.push(evaluateBinaryOperator(operand1, expression.get(op), operand2)); // Calulate, push onto stack
+                stack.push(evaluateBinaryOperator(operand1, expression.get(op), operand2)); // Calculate, push onto stack
 
-                expression.remove(op); // Remove operator from expression
-                op--;
+                expression.remove(op); op--; // Remove operator from expression
 
                 System.out.print(expression); System.out.println(stack);
             } else { // If NOT an operator
                 stack.push(expression.get(op)); // Push operand onto stack
 
-                expression.remove(op); // Remove operand from expression
-                op--;
+                expression.remove(op); op--; // Remove operand from expression
             }
         }
 
