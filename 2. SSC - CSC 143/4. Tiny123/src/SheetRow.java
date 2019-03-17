@@ -6,24 +6,20 @@ public class SheetRow {
 
     public SheetRow(int row) {
         String cellValBase = "R" + String.valueOf(row) + "C";
-        for (int i = 0; i <= 8; i++) {
+        for (int i = 1; i <= 9; i++) {
             cells.add(cellValBase + String.valueOf(i));
         }
     }
 
     public void addCell(int index, String s) {
-
+        cells.add(index, s);
     }
 
     public void removeCell(int index) {
-
+        cells.remove(index);
     }
 
     public void setValue(int cell, String s) {
-        if (cell < 0 || cell > 8) {
-            throw new IllegalArgumentException();
-        }
-
         cells.set(cell, s);
     }
 
@@ -36,7 +32,11 @@ public class SheetRow {
         return sb.toString();
     }
 
-    private int getSum() {
+    int getValue(int cell) {
+        return Integer.parseInt(cells.get(cell));
+    }
+
+    int getSum() {
         int sum = 0;
 
         for (String val : cells) {
@@ -48,4 +48,7 @@ public class SheetRow {
         return sum;
     }
 
+    int numCols() {
+        return cells.size();
+    }
 }
