@@ -11,6 +11,10 @@ In this exercise you'll practice using git to clone and edit repositories, as wi
 
 5. In the `README.md` file, below these instructions, add an ordered list of what you ate for breakfast today.
 
+    1. Lamb Korma
+    2. Naan Bread
+    3. Protien Shake
+
 6. Using your terminal, add and commit the changes you've made to your repository
 
 7. Push changes up to GitHub, and view them in your web browser. Make sure you are looking at the repository under _your_ account!
