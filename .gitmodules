@@ -1,0 +1,3 @@
+[submodule "INFO-201"]
+	path = INFO-201
+	url = https://github.com/info-201a-au20/book-exercises.git
