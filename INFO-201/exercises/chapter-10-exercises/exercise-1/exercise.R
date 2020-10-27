@@ -31,4 +31,4 @@ opponents = c("Dallas Cowboys", "Miami Dolphins", "Minnesota Vikings", "Arizona 
 games$opponents <- opponents
 
 # View your data frame to see how it has changed!
-view(games)
+View(games)
