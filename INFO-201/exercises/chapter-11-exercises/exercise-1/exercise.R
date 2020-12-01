@@ -1,7 +1,7 @@
 # Exercise 1: working with data frames (review)
 
 # Install devtools package: allows installations from GitHub
-install.packages("devtools")
+library(devtools)
 
 # Install "fueleconomy" dataset from GitHub
 devtools::install_github("hadley/fueleconomy")
@@ -11,6 +11,7 @@ library(fueleconomy)
 
 # You should now have access to the `vehicles` data frame
 # You can use `View()` to inspect it
+View(vehicles)
 
 
 # Select the different manufacturers (makes) of the cars in this data set. 
