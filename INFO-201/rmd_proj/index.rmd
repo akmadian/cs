@@ -1,0 +1,29 @@
+---
+title: "index"
+output:
+  pdf_document: default
+---
+```{r}
+source('analysis.R')
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## This is an R Markdown report.
+It gets values from the analysis.R file. analysis.R generates a vector of `r n_numbers` numbers with 
+a mean of `r mean_numbers` and a standard deviation of `r stdev_numbers`. This particular sample
+yielded a mean of `r sample_mean`. 
+
+```{r eval=FALSE}
+n_numbers <- 50
+mean_numbers <- 25
+stdev_numbers <- 10
+
+sample <- rnorm(n_numbers, mean_numbers, stdev_numbers)
+```
+
+The sampled values have been plotted in the below line chart.
+```{r}
+plot(sample, type="o")
+```
