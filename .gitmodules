@@ -4,3 +4,6 @@
 [submodule "CSE-374"]
 	path = CSE-374
 	url = https://gitlab.cs.washington.edu/cse-374-21wi/cse374-21wi-monorepo.git
+[submodule "INFO-340/problem-02-akmadian"]
+	path = INFO-340/problem-02-akmadian
+	url = git@github.com:info340-wi21/problem-02-akmadian.git
