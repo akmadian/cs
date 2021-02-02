@@ -7,3 +7,12 @@
 [submodule "INFO-340/problem-02-akmadian"]
 	path = INFO-340/problem-02-akmadian
 	url = git@github.com:info340-wi21/problem-02-akmadian.git
+[submodule "INFO-340/problem-03-akmadian"]
+	path = INFO-340/problem-03-akmadian
+	url = https://github.com/info340-wi21/problem-03-akmadian.git
+[submodule "INFO-340/problem-04-akmadian"]
+	path = INFO-340/problem-04-akmadian
+	url = https://github.com/info340-wi21/problem-04-akmadian.git
+[submodule "INFO-340/proj1"]
+	path = INFO-340/proj1
+	url = git@github.com:info340-wi21/project-1-akmadian.git

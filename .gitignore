@@ -3,7 +3,12 @@
 
 node_modules/
 
+CSE-414/hw2/*.csv
+CSE-414/hw3/*.csv
+CSE-414/hw2/*.zip
+CSE-414/hw3/*.zip
 CSE-414/hw2/flights-dataset/*.csv
+CSE-414/hw3/flights-dataset/*.csv
 INFO-340/problem-02-akmadian/problem-c/img/*
 INFO-340/problem-02-akmadian/problem-a/img/*
 INFO-340/problem-02-akmadian/problem-d/img/*
