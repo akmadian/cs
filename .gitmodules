@@ -1,24 +1,32 @@
 [submodule "INFO-340/problem-01-akmadian"]
-	path = INFO-340/problem-01-akmadian
-	url = https://github.com/info340-wi21/problem-01-akmadian.git
+  path = INFO-340/problem-01-akmadian
+  url = https://github.com/info340-wi21/problem-01-akmadian.git
+  branch = main
 [submodule "CSE-374"]
-	path = CSE-374
-	url = https://gitlab.cs.washington.edu/cse-374-21wi/cse374-21wi-monorepo.git
+  path = CSE-374
+  url = git@gitlab.cs.washington.edu:cse-374-21wi/cse374-21wi-monorepo.git
+  branch = main
 [submodule "INFO-340/problem-02-akmadian"]
-	path = INFO-340/problem-02-akmadian
-	url = git@github.com:info340-wi21/problem-02-akmadian.git
+  path = INFO-340/problem-02-akmadian
+  url = git@github.com:info340-wi21/problem-02-akmadian.git
+  branch = main
 [submodule "INFO-340/problem-03-akmadian"]
-	path = INFO-340/problem-03-akmadian
-	url = https://github.com/info340-wi21/problem-03-akmadian.git
+  path = INFO-340/problem-03-akmadian
+  url = https://github.com/info340-wi21/problem-03-akmadian.git
+  branch = main
 [submodule "INFO-340/problem-04-akmadian"]
-	path = INFO-340/problem-04-akmadian
-	url = https://github.com/info340-wi21/problem-04-akmadian.git
+  path = INFO-340/problem-04-akmadian
+  url = https://github.com/info340-wi21/problem-04-akmadian.git
+  branch = main
 [submodule "INFO-340/proj1"]
-	path = INFO-340/proj1
-	url = git@github.com:info340-wi21/project-1-akmadian.git
+  path = INFO-340/proj1
+  url = git@github.com:info340-wi21/project-1-akmadian.git
+  branch = main
 [submodule "CSE-373/proj1-DNA_Indexing"]
-	path = CSE-373/proj1-DNA_Indexing
-	url = git@github.com:akmadian/373-proj1
+  path = CSE-373/proj1-DNA_Indexing
+  url = git@github.com:akmadian/373-proj1
+  branch = main
 [submodule "CSE-373/proj2-Content_Moderation"]
-	path = CSE-373/proj2-Content_Moderation
-	url = git@github.com:akmadian/373-proj2
+  path = CSE-373/proj2-Content_Moderation
+  url = git@github.com:akmadian/373-proj2
+  branch = main

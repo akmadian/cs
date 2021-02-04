@@ -1,0 +1,8 @@
+I didn't have a very good experience with using Azure DB. It was consistently very slow, taking minutes to execute even basic queries like "SELECT COUNT(*) FROM table". I would sometimes wait several minutes just to be met with a syntax error message or connection error message.
+
+As a result, I didn't have the opportunity to test any of my queries on the Azure cloud itself, but I did do my absolute best to ensure my syntax is valid and proper without it.
+
+Cloud DBs are increasingly popular because of promises to handle scaling (vertical AND horizontal). I think the idea of offering this kind of service is really amazing.
+DBMS services offer a vast amount of value, mostly because they negate the need to stand up and maintain DBMS servers all on your own. Azure and companies like it
+take care of deployment of your DBMS around the world, handle speed, security, maintenance, and scaling. I think DBMS cloud services are an amazing value add to basically
+any company or developer.
