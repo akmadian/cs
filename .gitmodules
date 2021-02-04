@@ -22,7 +22,3 @@
   path = INFO-340/proj1
   url = git@github.com:info340-wi21/project-1-akmadian.git
   branch = main
-[submodule "CSE-373/proj2-Content_Moderation"]
-  path = CSE-373/proj2-Content_Moderation
-  url = git@github.com:akmadian/373-proj2
-  branch = main
