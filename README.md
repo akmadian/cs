@@ -1,7 +1,7 @@
-# CS Assignments
+# cs
+This is a repo of all of all of the assignments I've done in CS/ CS related classes.
 
-A repository of all my Computer Science Assignments.<br/>
- - Root directories will be named by school and class ID, in order of when I had the class.<br/>
- - Subdirs will be ordered by when they were assigned.
+Submodules by nature point to commits, but I've just been using them as a convenient way to nest repos within
+this one. I always just checkout the main/ master branch after initing and it works perfectly.
 
-##### If you're a student, don't use any of these to cheat.
+If you're a student, don't use any of these to cheat.
