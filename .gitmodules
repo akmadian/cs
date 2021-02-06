@@ -26,3 +26,7 @@
 	path = CSE-373/proj1-DNA_Indexing
 	url = git@github.com:akmadian/373-proj1
 	branch = master
+[submodule "INFO-340/problem-05-akmadian"]
+	path = INFO-340/problem-05-akmadian
+	url = git@github.com:info340-wi21/problem-05-akmadian.git
+	branch = main
