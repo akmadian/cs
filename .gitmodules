@@ -30,3 +30,7 @@
 	path = INFO-340/problem-05-akmadian
 	url = git@github.com:info340-wi21/problem-05-akmadian.git
 	branch = main
+[submodule "CSE-373/proj2-Content_Moderation"]
+	path = CSE-373/proj2-Content_Moderation
+	url = git@github.com:akmadian/373-proj2.git
+	branch = master

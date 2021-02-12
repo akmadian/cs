@@ -1,0 +1,37 @@
+a.
+  R(A, B, C, D, E) with FDs D->B, CE->A
+  A+ -> A
+  B+ -> B
+  C+ -> C
+  D+ -> BD
+  E+ -> E
+
+  For the first FD, D->BD. X=D, X+=BD.
+  X =/= X+ and X+=/=all fields, so we need to decompose.
+  Decomposing R, we get ABCDE - BD = ACE, so
+  R1 = BD, R2 = ACDE
+
+  Since FD2, CE->A, X=CE, X+=ACE.
+  X =/= X+, and X+=/=all fields, so we need to decompose.
+  Decomposing R2, we get ACDE - ACE = D, so
+  R1 = BD, R2 = ACE, R3 = DCE
+
+  For R1, the FD of D->B fits, so X=D, X+=BD.    X still =/=X+, but X+ does = all fields in R1, so no decomposition needed!
+  For R2, the FD of CE->A fits, so X=CE, X+=ACE. X still =/=X+, but X+ does = all fields in R2, so no decomposition needed!
+
+b.
+  S(A, B, C, D, E) with FDs A->E, BC->A, DE->B.
+  A+ -> AE
+  B+ -> B
+  C+ -> C
+  D+ -> D
+  E+ -> E
+  BC+ -> ABCE
+  DE+ -> BDE
+
+  For the first FD, A->E, X=A, X+=AE.
+  X =/= X, and X+=/=all fields, which means there is a dependency violation, so we need to decompose.
+  Decomposing S, we get ABCDE - AE = ACDE, so
+  R1 = AE, R2 = BCDE
+
+
