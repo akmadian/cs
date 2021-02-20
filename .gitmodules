@@ -34,3 +34,9 @@
 	path = CSE-373/proj2-Content_Moderation
 	url = git@github.com:akmadian/373-proj2.git
 	branch = master
+[submodule "INFO-340/problem-06-akmadian"]
+	path = INFO-340/problem-06-akmadian
+	url = git@github.com:info340-wi21/problem-06-akmadian.git
+[submodule "INFO-340/problem-07-akmadian"]
+	path = INFO-340/problem-07-akmadian
+	url = git@github.com:info340-wi21/problem-07-akmadian.git
