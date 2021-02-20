@@ -40,3 +40,6 @@
 [submodule "INFO-340/problem-07-akmadian"]
 	path = INFO-340/problem-07-akmadian
 	url = git@github.com:info340-wi21/problem-07-akmadian.git
+[submodule "CSE-373/proj3-Image_Processing"]
+	path = CSE-373/proj3-Image_Processing
+	url = git@github.com:akmadian/373-proj3
