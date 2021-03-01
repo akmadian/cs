@@ -1,0 +1,11 @@
+1
+  The height is two since the root node combines with the left subtree, making the height of the left subtree 2. After combining the nodes on the right subtree, the height of the right subtree is also 2.
+
+2
+  The minimum number of values that need to be added to the 2-3 tree to increase its height is 3. We can do this by adding a value to the right of the root node to make it full, then adding another under that same node to fill up its children, then adding a value to the node on its left. Since the left child node is already full, adding another node to it will increase the height of the tree.
+
+3
+  The maximum number of values is 13
+
+6
+  Since an LLRB is effectively a normal BST representation of a 2-3 tree, manyBSTs could also be valid LLRB trees, and since AVL trees are really just BSTs, all we have to do is find a BST that is not a valid AVL tree, and could also be a valid LLRB tree.

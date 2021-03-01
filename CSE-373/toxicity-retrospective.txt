@@ -1,0 +1,21 @@
+1
+  Since insertion sort does N work for each insertion, the insertion of a single item into a sorted array (reverse or not) with insertion sort is theta(N).
+
+  Using binary search would improve the worst case asymptotic runtime of a single-item insertion since it runs in logN time on a sorted array.
+
+2
+
+
+3
+  We could use sort of set of linked lists for this, a code-like representation could look like this:
+
+    {
+      [0, 0.25):   [items]
+      [0.25, 0.5): [items]
+      [0.5, 0.75): [items]
+      [0.75, 1]:   [items]
+    }
+
+  As we insert items to the structure, the priority bin will be computed, a pretty simple computation that will run in constant time. Getting the list to insert the item into would also be constant with some pretty simple arithmetic, and inserting an item at the front of the linked list will also be constant time since we could just insert the new item right at the front in a LIFO fashion.
+
+  Retreival would also be constant time based on the computation of the bin, and removing an item from the front of the linked list would also be constant time since all we really need to do is update pointers.

@@ -1,0 +1,33 @@
+1
+  Insertion - No - Since 7 is the last element in the array, it cannot be inserted before 10 mid execution, it would have to happen on the last step, in which case the array would look like: [1, 2, 3, 4, 5, 6, 8, 9, 10, 7]
+
+  Selection - No - Since we identify biggest elem on each pass, and put in correct position, not possible for 10 to be in position 4 during execution, would go to last position in first pass.
+
+  Merge     - No - First split cements where numbers can be during sort. If 6 and 7 are in the second array, they cannot be before 10 during the execution until the final step where the two sorted arrays are joined.
+    [10, 5, 8, 3, 4,  2, 9, 1, 6, 7]
+    [10, 5, 8, 3, 4] [2, 9, 1, 6, 7]
+
+  In Place Heap - YES
+    During array construction from heap, will look like either
+    INCREASING | DECREASING OR DECREASING | INCREASING.
+    The example given fits the INCREASING | DECREASING form, so is valid
+
+  In Place Quick -
+    FIRST ELEM PIVOT - 10 goes to end in first round - Invalid
+    GENERALLy        - With how pivoting and partitioning works, it's not possible to get a partially sorted array where it's INCREASING | DECREASING, every implementation I've seen has it more jumbled in the intermediate parts.
+
+2
+  - If one is stable and the other is unstable, then it wouldn't make much sense to switch mid way through. If stable sorting is needed, then you wouldn't start with an unstable sort method.
+  - If insertion has a better best-case asymptotic runtime, then why not just use it for the whole thing? switching to quicksort would just serve to slow it down even with smaller array sizes.
+  - The primary benefit of in place sorting is less memory usage, it wouldn't make much sense to use a method that takes more memory for larger arrays, then switch to something that uses less for smaller arrays.
+  - Since quicksort has an NlogN average complexity and insertion has an average n^2 complexity, and since average arrays are probably larger than 47 elements, it would make sense to pay more attention to experimental analysis results than it would to pay attention to theoretical results as in point 2.
+
+3
+  - If array is ascending sorted, there won't be any swaps done, so insertion sort is probably faster.
+  - If the array is reverse sorted, lots of swaps will need to be done, so insertion is not probably faster.
+  - Tree sort is not an in place sorting algorithm
+  - The worst case runtime for tree sort is the same as the worst case runtime for insertion sort, but the average case runtime is better with tree sort. This is because for a reverse sorted array, insertion sort would effectively have to swap N times for N items in the array, giving an N^2 runtime, but tree sort would only have to do N work to build the tree, and log N work to traverse it in order, giving NlogN in the average case.
+
+
+
+

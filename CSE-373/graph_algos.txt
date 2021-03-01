@@ -1,0 +1,34 @@
+1
+  Negative edge weights only really confuse Dijkstra's when they "hide" behind relatively large edge weights. Dijkstra's can't process possibilities of taking a more costly path up front for potential savings in cost later on by using negative edge weights.
+  If the only negative edge weights are outgoing edges from the start node, then Dijkstra's will be able to start off on more of an even footing, and instead of having to worry about possibly less costly paths existing, but being masked by costly edges, it will only have to consider the negative weights in its first move.
+
+2
+  In the case of the course prerequisites DAG from the 2/8 Reduction Algos lession, a valid Topological sort ordering could be
+
+     >-----------------------v  >----------------v
+    MATH 126 -> CSE 142 -> CSE 143 -> CSE 374  CSE 373 -> CSE 417
+
+  In this case, CSE 374 would come before in the topo sort, but clearly, no path from CSE 374 to CSE 417 exists in the original DAG. This particuar example has more than 5 nodes, but it can be reduced to even 4 nodes by simply removing MATH 126 and CSE 142 from the beginning of the DAG.
+
+3
+  An MST will always have V-1 edges in it, and if there are only V-1 edges in the original graph, like if it's already a valid tree, then the largest weight edge must be included in order for the graph to be connected.
+
+4
+  The original Dijkstra's runtime is theta( |V|log|V| + |E|log|V| ), with the first |V|log|V| coming from the while loop (|V|), and the perimiter min removal (log|V|).
+  Here, though, we've got the same while loop giving |V|, but removeMin now takes |V| time. Now our running total time is
+
+    theta( |V| * |V| + something ) = theta( |V|^2 + something ).
+
+  For the [something] part, the original runtime is theta( |E|log|V| ).
+  In terms of what stays the same, the old and newdist operations are still constant time, as is the if statement following it, as are the put operations following that. The for loop's runtime also stays the same at theta( |E| ) operations since it doesn't involve the modified PQ.
+  The only real difference here are the PQ operations right at the end. The two outcomes of the if statement were originally both log|V|, but the changepriority is now theta(1), and add is now theta( N ), where N is at most |V|. Adding all of this together, we get:
+
+    [something] = theta(|E|*|V|)
+
+  but, since chances are that the work of the for loop, |E|, will dominate the work of |V| in most cases, we can simplify this to:
+
+    [something] = theta(|E|).
+
+  Adding everything together, we get a total modified runtime of
+    theta( |V|^2 + |E| ).
+
