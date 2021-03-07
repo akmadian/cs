@@ -46,3 +46,9 @@
 [submodule "INFO-340/problem-08-akmadian"]
 	path = INFO-340/problem-08-akmadian
 	url = git@github.com:info340-wi21/problem-08-akmadian.git
+[submodule "INFO-340/problem-09"]
+	path = INFO-340/problem-09
+	url = git@github.com:info340-wi21/problem-09-akmadian.git
+[submodule "INFO-340/proj2"]
+	path = INFO-340/proj2
+	url = git@github.com:info340-wi21/project-2-akmadian.git
