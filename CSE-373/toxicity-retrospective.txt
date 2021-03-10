@@ -4,7 +4,8 @@
   Using binary search would improve the worst case asymptotic runtime of a single-item insertion since it runs in logN time on a sorted array.
 
 2
-
+  I think that since the array is nearly sorted, we won't have to do as much work.
+  For example, if we have an array [1, 2, 3, 5, 4], we only really do one pass, giving us theta(N) instead of omega(NlogN) since we only need to do one pass instead of at most N passes, and doing logN work each time.
 
 3
   We could use sort of set of linked lists for this, a code-like representation could look like this:
@@ -15,6 +16,17 @@
       [0.5, 0.75): [items]
       [0.75, 1]:   [items]
     }
+
+[
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+  0, 0.25: item -> item -> item,
+]
 
   As we insert items to the structure, the priority bin will be computed, a pretty simple computation that will run in constant time. Getting the list to insert the item into would also be constant with some pretty simple arithmetic, and inserting an item at the front of the linked list will also be constant time since we could just insert the new item right at the front in a LIFO fashion.
 

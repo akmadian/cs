@@ -1,6 +1,6 @@
 [submodule "INFO-340/problem-01-akmadian"]
   path = INFO-340/problem-01-akmadian
-  url = https://github.com/info340-wi21/problem-01-akmadian.git
+  url = git@github.com:info340-wi21/problem-01-akmadian.git
   branch = main
 [submodule "CSE-374"]
   path = CSE-374
@@ -12,11 +12,11 @@
   branch = main
 [submodule "INFO-340/problem-03-akmadian"]
   path = INFO-340/problem-03-akmadian
-  url = https://github.com/info340-wi21/problem-03-akmadian.git
+  url = git@github.com:info340-wi21/problem-03-akmadian.git
   branch = main
 [submodule "INFO-340/problem-04-akmadian"]
   path = INFO-340/problem-04-akmadian
-  url = https://github.com/info340-wi21/problem-04-akmadian.git
+  url = git@github.com:info340-wi21/problem-04-akmadian.git
   branch = main
 [submodule "INFO-340/proj1"]
   path = INFO-340/proj1

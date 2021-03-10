@@ -1,0 +1,22 @@
+1
+  As for the bit about nodes vs edges in the knowledge graph, I would say that items, or pages in wikipedia terms, would definitely be nodes,
+  and edges would be relationships in the data between those pages/ nodes.
+
+2
+  Given that we know the user is in Seattle, we can use the "Seattle" node and check if there are any links within some number
+  of degrees of separation that give a match for other terms. If there are some number of matches, we can sort the possible results
+  by number of matches with nodes to have some idea of relevance.
+
+3
+  For this, we might want to use some edge weights.
+  The weight for "President" would probably be higher for Joe Biden generally than Ana Marie Cauce since Biden is far more relevant to
+    people in general today. Even though the weight for Cauce would be relatively higher since the user is in Seattle, it wouldn't be
+    enough to counter the high weight of Biden.
+
+  "President UW" could return Cauce because the user's location, Seattle, has a close link to UW, and UW has a direct link to Cauce.
+    We would probably have fewer degrees of separation via these two links than, maybe, Seattle -> Washington -> U.S. -> President -> Biden
+
+  If we go by the user's location, we could go Seattle -> Washington, and that would be a match for one of the terms, but Washington state
+    doesn't have a president, so we could probably ignore the user's location data. Then, we could check Seattle -> Washington -> U.S. -> President,
+    then from the U.S. Presidents page, we have a direct link to George Washington.
+
