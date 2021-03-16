@@ -48,3 +48,6 @@
 [submodule "INFO-340/proj2"]
 	path = INFO-340/proj2
 	url = git@github.com:info340-wi21/project-2-akmadian.git
+[submodule "CSE-374/submodule"]
+	path = CSE-374/submodule
+	url = git@gitlab.cs.washington.edu:cse-374-21wi/cse374-21wi-monorepo.git
