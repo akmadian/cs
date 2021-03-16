@@ -1,3 +1,9 @@
+# The next four lines help ignore binaries
+*    # Ignore all
+!*.* # Unignore all with extensions
+!*/  # Unignore all dirs
+*.o  # Self explanatory
+
 *.idea/
 *.db
 
