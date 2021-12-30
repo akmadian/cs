@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link src="./test.css"/>
+  </head>
+  <body>
+    <script>
+      function checktime() {
+        fetch("/api/getTime")
+          .then(response => response.json())
+          .then(data => {
+            const date = data.date
+            console.log(date)
+            document.getElementById("results").innerText = date
+          })
+      }
+    </script>
+    <button onClick="checktime()">Check Time</button>
+    <div id="results"></div>
+  </body>
+</html>

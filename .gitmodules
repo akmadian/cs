@@ -51,3 +51,12 @@
 [submodule "CSE-374/submodule"]
 	path = CSE-374/submodule
 	url = git@gitlab.cs.washington.edu:cse-374-21wi/cse374-21wi-monorepo.git
+[submodule "INFO-441/a1-akmadian"]
+	path = INFO-441/a1-akmadian
+	url = git@github.com:info-441-au21/a1-akmadian.git
+[submodule "INFO-441/website-sharer-akmadian"]
+	path = INFO-441/website-sharer-akmadian
+	url = git@github.com:info-441-au21/website-sharer-akmadian.git
+[submodule "INFO-441/lecture-exercises-completed"]
+	path = INFO-441/lecture-exercises-completed
+	url = git@github.com:info-441-au21/lecture-exercises-completed.git
